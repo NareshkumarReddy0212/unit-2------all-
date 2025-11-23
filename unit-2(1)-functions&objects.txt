@@ -1,0 +1,101 @@
+UNIT - 2
+a.	Experiment Write JavaScript programs demonstrating variables, functions, and objects
+Aim:
+To implement a JavaScript program that demonstrates declaration of variables, creation of functions (regular and arrow), and definition of objects with properties and methods.
+
+Tools Required:
+•	Web browser (Chrome/Firefox)
+•	Text editor (VS Code/Notepad++)
+
+Procedure:
+1.	Create a folder named js_basics.
+2.	Inside the folder, create one file:
+o	index.html
+3.	Write the basic structure of an HTML document in index.html.
+4.	Add a <div> with an id output to display results.
+5.	Inside the <script> tag, declare variables using let, const, and var.
+6.	Define functions:
+o	A regular function (greet)
+o	An arrow function (square)
+7.	Create an object (student) with properties and methods.
+8.	Use the DOM (document.getElementById) to print outputs on the webpage.
+9.	Save the file and open it in a browser.
+10.	Verify that variables, function outputs, and object information are displayed.
+
+
+
+Source Code:
+
+
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Basics</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+    #output {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h1 { color: #007acc; }
+</style>
+</head>
+<body>
+
+<h1>JavaScript Program — Variables, Functions, and Objects</h1>
+<div id="output"></div>
+
+<script>
+    // --- VARIABLES ---
+    let name = "Suresh";   // block-scoped variable
+    const pi = 3.14159;     // constant
+    var age = 25;           // function-scoped (legacy)
+
+    // --- FUNCTIONS ---
+    function greet(userName) {
+      return "Hello, " + userName + "!";
+    }
+    const square = (num) => num * num;   // arrow function
+
+    // --- OBJECT ---
+    const student = {
+      id: 101,
+      fullName: "Sita Ram",
+      marks: { math: 85, science: 92 },
+      displayInfo: function() {
+        return `ID: ${this.id}, Name: ${this.fullName}`;
+      }
+    };
+
+    // --- OUTPUT TO PAGE ---
+    const out = document.getElementById("output");
+    out.innerHTML = `
+<p><b>Variables:</b><br>
+         name = ${name}, age = ${age}, pi = ${pi}</p>
+<p><b>Functions:</b><br>
+         greet("Suresh") → ${greet(name)}<br>
+         square(5) → ${square(5)}</p>
+<p><b>Object:</b><br>
+         student.displayInfo() → ${student.displayInfo()}<br>
+         Math Marks = ${student.marks.math}, Science Marks = ${student.marks.science}</p>
+    `;
+</script>
+
+</body>
+</html>
+Expected Output:
+•	The webpage displays variable values (name, age, pi).
+•	It shows function outputs (greet and square).
+•	It displays the student object information (ID, Name, Marks).
+
+Result:
+The JavaScript program was successfully created and executed. The output demonstrates correct usage of variables, functions, and objects in JavaScript.
+
